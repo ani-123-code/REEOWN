@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DollarSign, Smartphone, CircleCheck as CheckCircle, ArrowLeft, Upload, Shield, Award, Clock } from 'lucide-react';
+import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import serviceRequestAPI from '../api/serviceRequestAPI';
@@ -392,7 +393,14 @@ const SellPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+    <>
+      <SEO
+        title="Sell Your Old Electronics - Get Instant Cash | Eco Dispose Reeown"
+        description="Sell your old smartphones, laptops, tablets, and electronics to Reeown by Eco Dispose. Get instant cash, free pickup, fair pricing, and responsible recycling. Quick and easy process. Sell your device today!"
+        keywords="sell old phones, sell electronics, sell smartphones, sell laptops, sell old devices, instant cash for phones, sell to eco dispose, sell to reeown, trade in electronics, sell used phones"
+        url="/sell"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-16">
         <div className="container mx-auto px-4">
@@ -552,6 +560,7 @@ const SellPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

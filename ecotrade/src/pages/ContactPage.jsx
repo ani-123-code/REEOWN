@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MapPin, Phone, Mail, Send, MessageCircle, Headphones, Users } from 'lucide-react';
+import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { submitContactForm, resetContactState } from '../store/slices/newsletterContactSlice';
@@ -146,7 +147,14 @@ const ContactPage = () => {
   const faqs = getContactPageFAQs();
 
   return (
-    <div className="min-h-screen pt-20 pb-16">
+    <>
+      <SEO
+        title="Contact Us - Eco Dispose Reeown"
+        description="Get in touch with Reeown by Eco Dispose. Contact us for inquiries about refurbished electronics, sell your devices, repair services, e-waste recycling, or business partnerships. We're here to help!"
+        keywords="contact eco dispose, contact reeown, customer support, refurbished electronics support, sell device inquiry, repair service contact, e-waste recycling contact"
+        url="/contact"
+      />
+      <div className="min-h-screen pt-20 pb-16">
       {/* Hero Section */}
       <section className="py-12 sm:py-16 md:py-18 bg-gradient-to-br from-green-600 to-green-700 text-white">
         <div className="container mx-auto px-4 sm:px-6">

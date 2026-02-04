@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /account
+Disallow: /orders
+
+# Sitemap
+Sitemap: https://reeown.eco-dispose.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Allow important pages
+Allow: /products
+Allow: /product/
+Allow: /search
+Allow: /about
+Allow: /contact
+Allow: /sell
+Allow: /repair
+Allow: /recycle
+Allow: /business

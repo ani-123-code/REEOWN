@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/ui/Button';
 import { useCart } from '../../contexts/CartContext';
 import { fetchProductDetails, fetchProducts } from '../../store/slices/productSlice';
+import SEO from '../../components/SEO';
 import ProductBreadcrumb from './components/ProductBreadcrumb';
 import ProductImages from './components/ProductImages';
 import ProductInfo from './components/ProductInfo';
@@ -116,8 +117,30 @@ const ProductDetailPage = () => {
     }
   }
 
+  // Calculate discount percentage for SEO
+  const discountPercent = product.originalPrice 
+    ? Math.round(((product.originalPrice - (product.discountPrice || product.price)) / product.originalPrice) * 100)
+    : 0;
+
+  // Generate SEO description
+  const seoDescription = `Buy ${product.name} - ${product.condition} condition, ${product.warranty} warranty. ${product.description || 'Premium certified refurbished device with quality testing.'} ${discountPercent > 0 ? `Save up to ${discountPercent}% on ${product.name}.` : ''} Free shipping, quality tested, eco-friendly. Eco Dispose Reeown.`;
+
+  // Generate SEO keywords
+  const seoKeywords = `${product.name}, ${product.type?.name || ''}, refurbished ${product.type?.name || 'electronics'}, ${product.collection?.name || collectionName}, buy ${product.name}, certified pre-owned, eco dispose, reeown, quality tested, warranty device, ${product.condition} condition, refurbished ${product.type?.name || 'tech'}`;
+
   return (
-    <div className="min-h-screen pt-16 pb-8 sm:pt-20 sm:pb-12">
+    <>
+      <SEO
+        title={product.name}
+        description={seoDescription}
+        keywords={seoKeywords}
+        image={product.images?.[0] || product.image}
+        url={`/product/${product._id}`}
+        type="product"
+        product={product}
+        collection={product.collection}
+      />
+      <div className="min-h-screen pt-16 pb-8 sm:pt-20 sm:pb-12">
       <div className="container mx-auto px-2 sm:px-3 md:px-4">
         <ProductBreadcrumb 
           product={product}
@@ -172,6 +195,7 @@ const ProductDetailPage = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

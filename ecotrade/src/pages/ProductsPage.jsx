@@ -7,6 +7,7 @@ import {
   fetchTypes,
   fetchCollections,
 } from "../store/slices/productSlice";
+import SEO from "../components/SEO";
 import ProductCard from "../components/ui/ProductCard";
 import Button from "../components/ui/Button";
 import CustomSelect from "../components/ui/CustomSelect";
@@ -400,9 +401,21 @@ const ProductsPage = () => {
     };
   };
 
+  // SEO data (using displayCollectionName to avoid conflict with collectionName from useParams)
+  const displayCollectionName = seoCollection?.name || decodedCollectionName || 'All Products';
+  const collectionDescription = seoCollection?.description || `Browse our complete collection of premium certified refurbished ${displayCollectionName.toLowerCase()}. Quality tested devices with warranty. Eco Dispose Reeown.`;
+  const seoKeywords = `${displayCollectionName}, refurbished ${displayCollectionName.toLowerCase()}, buy ${displayCollectionName.toLowerCase()}, certified pre-owned, eco dispose, reeown, quality tested, warranty devices, ${displayCollectionName} products`;
 
   return (
-    <div className="min-h-screen pt-12 sm:pt-16 pb-16 bg-gray-50">
+    <>
+      <SEO
+        title={`${displayCollectionName} - Refurbished Electronics`}
+        description={collectionDescription}
+        keywords={seoKeywords}
+        url={`/products/${seoCollection?.slug || decodedCollectionName || ''}`}
+        collection={seoCollection}
+      />
+      <div className="min-h-screen pt-12 sm:pt-16 pb-16 bg-gray-50">
       <div className="w-full mx-auto px-3 sm:px-4">
         <div
           className="py-8 sm:py-10 px-4 sm:px-6 rounded-lg mb-6 sm:mb-8 text-white"
@@ -623,8 +636,8 @@ const ProductsPage = () => {
           </div>
         </div>
       </div>
-
     </div>
+    </>
   );
 };
 

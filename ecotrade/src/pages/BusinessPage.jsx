@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Building2, CircleCheck as CheckCircle, ArrowLeft, ShoppingCart, Package, TrendingUp, Award, Shield, Clock, Users } from 'lucide-react';
+import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import serviceRequestAPI from '../api/serviceRequestAPI';
@@ -156,7 +157,14 @@ const BusinessPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <>
+      <SEO
+        title="Business Solutions - Bulk Electronics & Corporate Services | Eco Dispose Reeown"
+        description="Business solutions by Reeown Eco Dispose. Bulk refurbished electronics, corporate device procurement, e-waste management, business partnerships. Special pricing for businesses. Contact us for enterprise solutions!"
+        keywords="bulk electronics, corporate electronics, business refurbished devices, enterprise solutions, bulk purchase electronics, corporate device procurement, business e-waste, eco dispose business, reeown corporate"
+        url="/business"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-3 sm:px-4">

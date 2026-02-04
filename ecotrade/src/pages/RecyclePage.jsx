@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Recycle, CircleCheck as CheckCircle, User, Building2, ArrowLeft, Leaf, Globe, Award, Shield } from 'lucide-react';
+import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import serviceRequestAPI from '../api/serviceRequestAPI';
@@ -255,6 +256,13 @@ const RecyclePage = () => {
   }
 
   return (
+    <>
+      <SEO
+        title="E-Waste Recycling - Responsible E-Waste Disposal | Eco Dispose Reeown"
+        description="Responsible e-waste recycling by Reeown Eco Dispose. Free pickup, proper disposal, recycling certificate, corporate and individual services. Dispose your electronic waste responsibly. Help the environment!"
+        keywords="e-waste recycling, electronic waste disposal, e-waste pickup, recycle electronics, responsible e-waste, e-waste recycling india, corporate e-waste, eco dispose recycling, reeown recycling"
+        url="/recycle"
+      />
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-violet-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white py-12">
@@ -557,6 +565,7 @@ const RecyclePage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -20,6 +20,7 @@ const stockNotificationRoutes = require('./routes/stockNotificationRoutes');
 const otpRoutes = require('./routes/otpRoutes');
 const businessRoutes = require('./routes/businessRoutes');
 const sellerRoutes = require('./routes/sellerRoutes');
+const sitemapRoutes = require('./routes/sitemapRoutes');
 
 
 const app = express();
@@ -122,7 +123,8 @@ app.use('/api/wishlist', wishlistRoutes);
 app.use('/api/stock-notifications', stockNotificationRoutes);
 app.use('/api/otp', otpRoutes);
 app.use('/api/business', businessRoutes);
-app.use('/api/seller-requests', sellerRoutes); 
+app.use('/api/seller-requests', sellerRoutes);
+app.use('/', sitemapRoutes);
 
 // Health check route with environment info
 app.get('/api/health', (req, res) => {

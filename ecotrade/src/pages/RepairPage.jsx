@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Wrench, CircleCheck as CheckCircle, ArrowLeft, Shield, Clock, Award, Settings } from 'lucide-react';
+import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import serviceRequestAPI from '../api/serviceRequestAPI';
@@ -413,7 +414,14 @@ const RepairPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+    <>
+      <SEO
+        title="Electronics Repair Services - Expert Device Repair | Eco Dispose Reeown"
+        description="Professional electronics repair services by Reeown Eco Dispose. Expert repair for smartphones, laptops, tablets, and all devices. Quick turnaround, warranty on repairs, affordable pricing. Get your device fixed today!"
+        keywords="electronics repair, phone repair, laptop repair, device repair service, smartphone repair, tablet repair, expert repair, eco dispose repair, reeown repair service"
+        url="/repair"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-orange-600 to-amber-600 text-white py-16">
         <div className="container mx-auto px-4">
@@ -573,6 +581,7 @@ const RepairPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

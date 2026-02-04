@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, Globe, Heart, Target, Zap, Shield, Truck } from 'lucide-react';
+import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 
@@ -56,7 +57,14 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-16 bg-gray-50">
+    <>
+      <SEO
+        title="About Us - Eco Dispose Reeown"
+        description="Learn about Reeown by Eco Dispose - India's leading platform for certified refurbished electronics. Our mission to reduce e-waste, provide quality tested devices, and promote sustainable technology. Quality, trust, and environmental responsibility."
+        keywords="about eco dispose, about reeown, refurbished electronics company, sustainable tech india, e-waste reduction, certified refurbished, quality tested devices, eco-friendly electronics"
+        url="/about"
+      />
+      <div className="min-h-screen pt-20 pb-16 bg-gray-50">
       {/* Hero Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-600 to-green-700 text-white">
         <div className="container mx-auto px-4 sm:px-6">
@@ -271,6 +279,7 @@ const AboutPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
