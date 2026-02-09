@@ -672,6 +672,7 @@ const BusinessPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
